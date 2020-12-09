@@ -11,25 +11,46 @@ Este pacote implementa a geração de payloads para usar em QRCode estático PIX
 
 # Como usar?
 
-Basta criar uma instância de Payload, usando como parâmetros a chave pix, valor, id de identificação da transação e informações do títular da conta.
+### 1 - Basta criar uma instância de Payload, usando como parâmetros a chave pix, id de identificação da transação e informações do títular da conta.
 
 ```csharp
-var payload = new Payload("bee05743-4291-4f3c-9259-595df1307ba1", 00.50m, "Um-Id-Qualquer", new Merchant("Alexandre Lima", "Presidente Prudente"));
+var payload = new Payload(
+                "bee05743-4291-4f3c-9259-595df1307ba1",
+                "Um-Id-Qualquer", 
+                new Merchant("Alexandre Lima", "Presidente Prudente")
+                );
 ```
 
-Em seguida gerar:
+#### Propriedades opcionais:
+- Valor (Caso não informado, ficará livre para o pagador digitar o valor);
+- Descriçao (Caso informado, aparecerá no momento do pagamento).
+
+Exemplo, definindo o valor de R$ 15,00 e descrição "Pagamento do pedido X":
+```csharp
+var payload = new Payload(
+                "bee05743-4291-4f3c-9259-595df1307ba1",
+                "Um-Id-Qualquer",
+                new Merchant("Alexandre Lima", "Presidente Prudente"))
+            {
+                Amount = 15.00m,
+                Description = "Pagamento do pedido X"
+            };
+```
+
+### 2 - Gerar a string para setar no QrCode:
 
 ```csharp
-var stringToQrCode = payload.Generate();
+var stringToQrCode = payload.GenerateStringToQrCode();
 ```
 
-Retornara uma string conforme os valores setados, algo parecio com isso:
+Retornará uma string como esta:
 
 ```
 00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre Lima6019Presidente Prudente62180514Um-Id-Qualquer6304D475
 ```
 
-Enfim, basta setar em um QRCode! ;)
+Por fim, basta setar em um QRCode! ;)
 
+<img src='https://dyn-qrcode.vercel.app/api?url=00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre%20Lima6019Presidente%20Prudente62180514Um-Id-Qualquer6304D475' />
 
-Este projeto possuí testes, onde poderá ser usado para colocar os valores que quiser, em sequência poderá copiar para um site [como este](https://pix.nascent.com.br/tools/pix-qr-decoder/) para ver o QrCode.
+Este projeto possuí teste, onde poderá ser usado para colocar os valores que quiser, em seguida copiar a string gerada para um site [como este](https://pix.nascent.com.br/tools/pix-qr-decoder/) para validar e ver o QrCode.
