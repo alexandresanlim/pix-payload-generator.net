@@ -11,7 +11,7 @@ Este pacote implementa a geração de payloads para usar em QRCode estático PIX
 
 # Como usar?
 
-#### 1 - Basta criar uma instância de Payload, usando como parâmetros a chave pix, id de identificação da transação e informações do títular da conta.
+### 1 - Basta criar uma instância de Payload, usando como parâmetros a chave pix, id de identificação da transação e informações do títular da conta.
 
 ```csharp
 var payload = new Payload(
@@ -37,7 +37,7 @@ var payload = new Payload(
             };
 ```
 
-#### 2 - Gerar a string para setar no QrCode:
+### 2 - Gerar a string para setar no QrCode:
 
 ```csharp
 var stringToQrCode = payload.Generate();
