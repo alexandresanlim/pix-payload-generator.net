@@ -28,7 +28,7 @@ Em seguida gerar:
 var stringToQrCode = payload.Generate();
 ```
 
-Retornara uma string conforme os valores setados, algo parecio com isso:
+Retornará uma string conforme os valores setados, algo parecio com isso:
 
 ```
 00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre Lima6019Presidente Prudente62180514Um-Id-Qualquer6304D475
