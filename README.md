@@ -31,5 +31,6 @@ Retornara uma string conforme os valores setados, algo parecio com isso:
 
 Enfim, basta setar em um QRCode! ;)
 
+<img src='https://dyn-qrcode.vercel.app/api?url=00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre%20Lima6019Presidente%20Prudente62180514Um-Id-Qualquer6304D475' />
 
 Este projeto possuí testes, onde poderá ser usado para colocar os valores que quiser, em sequência poderá copiar para um site [como este](https://pix.nascent.com.br/tools/pix-qr-decoder/) para ver o QrCode.
