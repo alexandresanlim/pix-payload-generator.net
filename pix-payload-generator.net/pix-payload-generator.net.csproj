@@ -1,8 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net45;netstandard1.0;netstandard1.6;netstandard2.0</TargetFrameworks>
     <RootNamespace>pix_payload_generator.net</RootNamespace>
+    <Authors>Alexandre Sanlim</Authors>
+    <RepositoryUrl>https://github.com/alexandresanlim/pix-payload-generator.net</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/alexandresanlim/pix-payload-generator.net</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <Version>1.0.1</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="src\logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
