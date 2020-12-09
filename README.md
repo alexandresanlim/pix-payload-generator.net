@@ -40,7 +40,7 @@ var payload = new Payload(
 ### 2 - Gerar a string para setar no QrCode:
 
 ```csharp
-var stringToQrCode = payload.Generate();
+var stringToQrCode = payload.GenerateStringToQrCode();
 ```
 
 Retornará uma string como está:
