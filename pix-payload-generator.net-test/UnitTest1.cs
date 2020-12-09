@@ -9,7 +9,7 @@ namespace pix_payload_generator.net_test
         [TestMethod]
         public void CreatePayload()
         {
-            var payload = new Payload("41703107802", "Pagamento do pedido 123456", "William Costa", "SAO PAULO", 00.50m, "WDEV1234");
+            var payload = new Payload("41703107802", "Pagamento do pedido 123456", 00.50m, "WDEV1234", new Merchant { Name = "Alexandre Lima", City = "Presidente Prudente" });
 
             var pgenerator = 
                 payload.GetIndicator() + 

@@ -6,17 +6,21 @@ namespace pix_payload_generator.net
 {
     public class Payload
     {
-        public Payload(string _pixKey, string _description, string _merchantName, string _merchantCity, decimal _amount, string _txId)
+        public Payload(string _pixKey, string _description, decimal _amount, string _txId, Merchant _merchant)
         {
             PixKey = _pixKey;
             Description = _description;
-            MerchantName = _merchantName;
-            MerchantCity = _merchantCity;
+            Merchant = _merchant;
             TxId = _txId;
             Amount = _amount;
         }
 
         public PayloadIdInformation Id => new PayloadIdInformation();
+
+        /// <summary>
+        /// Informações do comerciante
+        /// </summary>
+        public Merchant Merchant { get; set; }
 
         /// <summary>
         /// Chave pix, se telefone colocar +55
@@ -27,16 +31,6 @@ namespace pix_payload_generator.net
         /// Descrição que aparece no momento do pagamento
         /// </summary>
         public string Description { get; set; }
-
-        /// <summary>
-        /// Nome do titular da conta
-        /// </summary>
-        public string MerchantName { get; set; }
-
-        /// <summary>
-        /// Cidade do titular da conta
-        /// </summary>
-        public string MerchantCity { get; set; }
 
         /// <summary>
         /// Id da transação
@@ -119,12 +113,12 @@ namespace pix_payload_generator.net
 
         public static string GetMerchantName(this Payload payload)
         {
-            return Payload.GetValue(payload.Id.MerchantName, payload.MerchantName);
+            return Payload.GetValue(payload.Id.MerchantName, payload.Merchant.Name);
         }
 
         public static string GetMerchantCity(this Payload payload)
         {
-            return Payload.GetValue(payload.Id.MerchantCity, payload.MerchantCity);
+            return Payload.GetValue(payload.Id.MerchantCity, payload.Merchant.City);
         }
 
         public static string GetAdditionalDataFieldTemplate(this Payload payload)
