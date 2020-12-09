@@ -9,7 +9,7 @@ namespace pix_payload_generator.net_test
         [TestMethod]
         public void CreatePayload()
         {
-            var payload = new Payload("41703107802", 05.00m, "Um-Id-Qualquer", new Merchant { Name = "Alexandre Lima", City = "Presidente Prudente" });
+            var payload = new Payload("41703107802", 00.50m, "Um-Id-Qualquer", new Merchant("Alexandre Lima", "Presidente Prudente"));
 
             var stringToQrCode = payload.Generate();
 

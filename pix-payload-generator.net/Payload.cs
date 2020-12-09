@@ -6,6 +6,14 @@ namespace pix_payload_generator.net
 {
     public class Payload
     {
+        /// <summary>
+        /// Retorna um objeto pronto para ser gerado um payload
+        /// </summary>
+        /// <param name="_pixKey">Chave pix do recebedor</param>
+        /// <param name="_amount">Valor total do pix</param>
+        /// <param name="_txId">Identificado do pagamento</param>
+        /// <param name="_merchant">Informações do titular da conta</param>
+        /// <param name="_description">Uma descrição que aparecerá no momento do pagamento</param>
         public Payload(string _pixKey, decimal _amount, string _txId, Merchant _merchant, string _description = "")
         {
             PixKey = _pixKey;

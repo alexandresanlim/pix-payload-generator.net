@@ -6,6 +6,12 @@ namespace pix_payload_generator.net
 {
     public class Merchant
     {
+        public Merchant(string _name, string _city)
+        {
+            Name = _name;
+            City = _city;
+        }
+
         /// <summary>
         /// Nome do titular da conta
         /// </summary>
