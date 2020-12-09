@@ -7,12 +7,14 @@ usando como refrência o [manual de iniciação do pix 2.1](https://www.bcb.gov.
 
 # Como usar?
 
-Basta criar uma instância de Payload:
+Basta criar uma instância de Payload, usando como parâmetros a chave pix, valor, id de identificação da transação e informações do títular da conta.
+
 ```csharp
 var payload = new Payload("bee05743-4291-4f3c-9259-595df1307ba1", 00.50m, "Um-Id-Qualquer", new Merchant("Alexandre Lima", "Presidente Prudente"));
 ```
 
 Em seguida gerar:
+
 ```csharp
 var stringToQrCode = payload.Generate();
 ```
@@ -26,4 +28,4 @@ Retornara uma string conforme os valores setados, algo parecio com isso:
 Enfim, basta setar em um QRCode! ;)
 
 
-Este projeto possuí testes, onde poderá ser usado para colocar os valores que quiser, em sequência poderá copiar para um site [como este](https://pix.nascent.com.br/tools/pix-qr-decoder/) para ver o QrCode e testar.
+Este projeto possuí testes, onde poderá ser usado para colocar os valores que quiser, em sequência poderá copiar para um site [como este](https://pix.nascent.com.br/tools/pix-qr-decoder/) para ver o QrCode.
