@@ -21,7 +21,7 @@ var payload = new Payload(
                 );
 ```
 
-Propriedades opcionais:
+#### Propriedades opcionais:
 - Valor (Caso não informado, ficará livre para o pagador digitar o valor);
 - Descriçao (Caso informado, aparecerá no momento do pagamento).
 
@@ -37,13 +37,13 @@ var payload = new Payload(
             };
 ```
 
-#### 2 - Em seguida gerar:
+#### 2 - Gerar a string para setar no QrCode:
 
 ```csharp
 var stringToQrCode = payload.Generate();
 ```
 
-Retornará uma string conforme os valores setados, algo parecio com isso:
+Retornará uma string como está:
 
 ```
 00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre Lima6019Presidente Prudente62180514Um-Id-Qualquer6304D475
