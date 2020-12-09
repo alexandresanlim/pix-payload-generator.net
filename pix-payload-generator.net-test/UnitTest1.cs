@@ -9,22 +9,11 @@ namespace pix_payload_generator.net_test
         [TestMethod]
         public void CreatePayload()
         {
-            var payload = new Payload("41703107802", "Pagamento do pedido 123456", 00.50m, "WDEV1234", new Merchant { Name = "Alexandre Lima", City = "Presidente Prudente" });
+            var payload = new Payload("41703107802", 05.00m, "Um-Id-Qualquer", new Merchant { Name = "Alexandre Lima", City = "Presidente Prudente" });
 
-            var pgenerator = 
-                payload.GetIndicator() + 
-                payload.GetMerchantAccountInformation() +
-                payload.GetMerchantCategoryCode() +
-                payload.GetTransationCurrency() +
-                payload.GetTransationAmount() +
-                payload.GetCountryCode() +
-                payload.GetMerchantName() +
-                payload.GetMerchantCity() +
-                payload.GetAdditionalDataFieldTemplate()
-                ;
+            var stringToQrCode = payload.Generate();
 
-
-            var ab = payload.GetCrc16(pgenerator);
+            Assert.IsFalse(string.IsNullOrEmpty(stringToQrCode));
         }
     }
 }
