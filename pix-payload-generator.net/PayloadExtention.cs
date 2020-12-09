@@ -86,7 +86,7 @@ namespace pix_payload_generator.net
             return r;
         }
 
-        public static string Generate(this Payload payload)
+        public static string GenerateStringToQrCode(this Payload payload)
         {
             var pgenerator =
                GetIndicator() +

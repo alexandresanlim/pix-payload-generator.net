@@ -11,10 +11,14 @@ namespace pix_payload_generator.net_test
         {
             var payload = new Payload(
                 "bee05743-4291-4f3c-9259-595df1307ba1",
-                "Um-Id-Qualquer", 
-                new Merchant("Alexandre Lima", "Presidente Prudente"));
+                "Um-Id-Qualquer",
+                new Merchant("Alexandre Lima", "Presidente Prudente"))
+            {
+                Amount = 15.00m,
+                Description = "Pagamento do pedido X"
+            };
 
-            var stringToQrCode = payload.Generate();
+            var stringToQrCode = payload.GenerateStringToQrCode();
 
             Assert.IsFalse(string.IsNullOrEmpty(stringToQrCode));
         }

@@ -15,11 +15,11 @@ namespace pix_payload_generator.net
         /// <summary>
         /// Nome do titular da conta
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
         /// <summary>
         /// Cidade do titular da conta
         /// </summary>
-        public string City { get; set; }
+        public string City { get; private set; }
     }
 }
