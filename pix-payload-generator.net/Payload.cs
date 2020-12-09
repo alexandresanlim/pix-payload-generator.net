@@ -14,7 +14,7 @@ namespace pix_payload_generator.net
         /// <param name="_txId">Identificado do pagamento</param>
         /// <param name="_merchant">Informações do titular da conta</param>
         /// <param name="_description">Uma descrição que aparecerá no momento do pagamento</param>
-        public Payload(string _pixKey, decimal _amount, string _txId, Merchant _merchant, string _description = "")
+        public Payload(string _pixKey, string _txId, Merchant _merchant, decimal? _amount = null, string _description = "")
         {
             PixKey = _pixKey;
             Description = _description;
@@ -46,6 +46,6 @@ namespace pix_payload_generator.net
         /// <summary>
         /// Valor da transação, duas casas decimais, separadas por ponto e não tenha separação de milhar
         /// </summary>
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
     }
 }

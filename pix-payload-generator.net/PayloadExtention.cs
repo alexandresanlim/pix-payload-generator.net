@@ -34,7 +34,10 @@ namespace pix_payload_generator.net
 
         public static string GetTransationAmount(this Payload payload)
         {
-            return GetValue(PayloadId.TransactionAmount, payload.Amount.ToString("G", System.Globalization.CultureInfo.InvariantCulture));
+            if (!payload.Amount.HasValue || !(payload.Amount.Value > 0))
+                return "";
+
+            return GetValue(PayloadId.TransactionAmount, payload.Amount.Value.ToString("G", System.Globalization.CultureInfo.InvariantCulture));
         }
 
         public static string GetCountryCode()
