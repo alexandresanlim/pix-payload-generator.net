@@ -4,7 +4,7 @@ using System.Text;
 
 namespace pix_payload_generator.net
 {
-    public class PayloadId
+    public abstract class PayloadId
     {
         public static string PayloadFormatIndicator => "00";
 
