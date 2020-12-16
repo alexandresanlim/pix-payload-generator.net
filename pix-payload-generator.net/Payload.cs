@@ -26,11 +26,13 @@ namespace pix_payload_generator.net
         /// <summary>
         /// Retorna um objeto pronto para ser gerado um payload para um QRCode DINÂMICO
         /// </summary>
-        /// <param name="_txId"></param>
+        /// <param name="_txId">TxId retornado do seu cob</param>
         /// <param name="_merchant"></param>
+        /// <param name="_url">Location retornado do seu cob</param>
+        /// <param name="_uniquePayment">Definir se é pagamento unico</param>
         /// <param name="_amount"></param>
         /// <param name="_description"></param>
-        public Payload(string _txId, Merchant _merchant, string _url, bool _uniquePayment, decimal? _amount = null, string _description = "")
+        public Payload(string _txId, Merchant _merchant, string _url, bool _uniquePayment = false, decimal? _amount = null, string _description = "")
         {
             Description = _description;
             Merchant = _merchant;
@@ -73,7 +75,7 @@ namespace pix_payload_generator.net
         /// <summary>
         /// Define se o pagamento pode ser feito apenas uma vez
         /// </summary>
-        public bool UniquePayment { get; private set; } = false;
+        public bool UniquePayment { get; private set; }
 
         
     }
