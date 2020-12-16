@@ -9,7 +9,7 @@ namespace pix_payload_generator.net_test
         [TestMethod]
         public void CreateStaticPayload()
         {
-            var payload = new Payload(
+            var payload = new StaticPayload(
                 "bee05743-4291-4f3c-9259-595df1307ba1",
                 "Um-Id-Qualquer",
                 new Merchant("Alexandre Lima", "Presidente Prudente"));
@@ -22,7 +22,7 @@ namespace pix_payload_generator.net_test
         [TestMethod]
         public void CreateStaticPayloadWithOptinalInfo()
         {
-            var payload = new Payload(
+            var payload = new StaticPayload(
                 "bee05743-4291-4f3c-9259-595df1307ba1",
                 "Um-Id-Qualquer",
                 new Merchant("Alexandre Lima", "Presidente Prudente"))
