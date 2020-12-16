@@ -8,6 +8,8 @@ namespace pix_payload_generator.net
     {
         public static string PayloadFormatIndicator => "00";
 
+        public static string PointOfInitiationMethod => "01";
+
         public static string MerchantAccountInfomation => "26";
 
         public static string MerchantAccountInfomationGui => "00";
@@ -15,6 +17,8 @@ namespace pix_payload_generator.net
         public static string MerchantAccountInfomationKey => "01";
 
         public static string MerchantAccountInformationDescription => "02";
+
+        public static string MerchantAccountInformationUrl => "25";
 
         public static string MerchantCategoryCode => "52";
 

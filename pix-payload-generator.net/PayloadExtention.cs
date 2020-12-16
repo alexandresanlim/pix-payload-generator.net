@@ -15,11 +15,14 @@ namespace pix_payload_generator.net
         {
             var gui = GetValue(PayloadId.MerchantAccountInfomationGui, "br.gov.bcb.pix");
 
-            var key = GetValue(PayloadId.MerchantAccountInfomationKey, payload.PixKey);
+            var key = !string.IsNullOrEmpty(payload?.PixKey) ? GetValue(PayloadId.MerchantAccountInfomationKey, payload.PixKey) : "";
 
             var description = !string.IsNullOrEmpty(payload?.Description) ? GetValue(PayloadId.MerchantAccountInformationDescription, payload.Description) : "";
 
-            return GetValue(PayloadId.MerchantAccountInfomation, gui + key + description);
+            //url do qrcode dinâmico
+            var url = !string.IsNullOrEmpty(payload?.Url) ? GetValue(PayloadId.MerchantAccountInformationUrl, payload.Url) : "";
+
+            return GetValue(PayloadId.MerchantAccountInfomation, gui + key + description + url);
         }
 
         public static string GetMerchantCategoryCode()
@@ -71,6 +74,11 @@ namespace pix_payload_generator.net
             return fullPaylod + GetValue(PayloadId.CRC16, calc);
         }
 
+        public static string GetUniquePayment(this Payload payload)
+        {
+            return payload.UniquePayment ? GetValue(PayloadId.PointOfInitiationMethod, "12") : "";
+        }
+
         /// <summary>
         /// Adiciona o valor TAM do payload
         /// </summary>
@@ -90,6 +98,7 @@ namespace pix_payload_generator.net
         {
             var pgenerator =
                GetIndicator() +
+               payload.GetUniquePayment() +
                payload.GetMerchantAccountInformation() +
                GetMerchantCategoryCode() +
                GetTransationCurrency() +

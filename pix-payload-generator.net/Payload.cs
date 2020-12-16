@@ -47,5 +47,15 @@ namespace pix_payload_generator.net
         /// Valor da transação, duas casas decimais, separadas por ponto e não tenha separação de milhar
         /// </summary>
         public decimal? Amount { get; set; }
+
+        /// <summary>
+        /// Define se o pagamento pode ser feito apenas uma vez
+        /// </summary>
+        public bool UniquePayment { get; set; } = false;
+
+        /// <summary>
+        /// Url do payload dinâmico
+        /// </summary>
+        public string Url { get; set; }
     }
 }
