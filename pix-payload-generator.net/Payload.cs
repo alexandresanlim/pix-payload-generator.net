@@ -7,7 +7,7 @@ namespace pix_payload_generator.net
     public class Payload
     {
         /// <summary>
-        /// Retorna um objeto pronto para ser gerado um payload
+        /// Retorna um objeto pronto para ser gerado um payload para um QRCode ESTATICO
         /// </summary>
         /// <param name="_pixKey">Chave pix do recebedor</param>
         /// <param name="_amount">Valor total do pix</param>
@@ -17,6 +17,21 @@ namespace pix_payload_generator.net
         public Payload(string _pixKey, string _txId, Merchant _merchant, decimal? _amount = null, string _description = "")
         {
             PixKey = _pixKey;
+            Description = _description;
+            Merchant = _merchant;
+            TxId = _txId;
+            Amount = _amount;
+        }
+
+        /// <summary>
+        /// Retorna um objeto pronto para ser gerado um payload para um QRCode DINÂMICO
+        /// </summary>
+        /// <param name="_txId"></param>
+        /// <param name="_merchant"></param>
+        /// <param name="_amount"></param>
+        /// <param name="_description"></param>
+        public Payload(string _txId, Merchant _merchant, decimal? _amount = null, string _description = "")
+        {
             Description = _description;
             Merchant = _merchant;
             TxId = _txId;
