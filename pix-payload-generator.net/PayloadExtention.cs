@@ -60,7 +60,9 @@ namespace pix_payload_generator.net
 
         public static string GetAdditionalDataFieldTemplate(this PayloadBase payload)
         {
-            var txid = GetValue(PayloadId.AdditionalFieldTemplateTxId, payload.TxId);
+            var txidInfo = payload.TxId.Length > 25 ? payload.TxId.Substring(0, 25) : payload.TxId;
+
+            var txid = GetValue(PayloadId.AdditionalFieldTemplateTxId, txidInfo);
 
             return GetValue(PayloadId.AdditionalFieldTemplate, txid);
         }
