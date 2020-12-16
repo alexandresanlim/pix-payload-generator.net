@@ -30,12 +30,14 @@ namespace pix_payload_generator.net
         /// <param name="_merchant"></param>
         /// <param name="_amount"></param>
         /// <param name="_description"></param>
-        public Payload(string _txId, Merchant _merchant, decimal? _amount = null, string _description = "")
+        public Payload(string _txId, Merchant _merchant, string _url, bool _uniquePayment, decimal? _amount = null, string _description = "")
         {
             Description = _description;
             Merchant = _merchant;
             TxId = _txId;
             Amount = _amount;
+            Url = _url;
+            UniquePayment = _uniquePayment;
         }
 
         /// <summary>
@@ -64,13 +66,15 @@ namespace pix_payload_generator.net
         public decimal? Amount { get; set; }
 
         /// <summary>
-        /// Define se o pagamento pode ser feito apenas uma vez
-        /// </summary>
-        public bool UniquePayment { get; set; } = false;
-
-        /// <summary>
         /// Url do payload dinâmico
         /// </summary>
-        public string Url { get; set; }
+        public string Url { get; private set; }
+
+        /// <summary>
+        /// Define se o pagamento pode ser feito apenas uma vez
+        /// </summary>
+        public bool UniquePayment { get; private set; } = false;
+
+        
     }
 }
