@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace pix_payload_generator.net
+namespace pix_payload_generator.net.Models.PayloadModels
 {
-    public class PayloadBase
+    public class Payload
     {
         /// <summary>
         /// Informações do comerciante
@@ -42,7 +42,7 @@ namespace pix_payload_generator.net
         public bool UniquePayment { get; protected set; }
     }
 
-    public class StaticPayload : PayloadBase
+    public class StaticPayload : Payload
     {
         /// <summary>
         /// Retorna um objeto pronto para ser gerado um payload para um QRCode ESTATICO
@@ -62,7 +62,7 @@ namespace pix_payload_generator.net
         }        
     }
 
-    public class DynamicPayload : PayloadBase
+    public class DynamicPayload : Payload
     {
         /// <summary>
         /// Retorna um objeto pronto para ser gerado um payload para um QRCode DINÂMICO

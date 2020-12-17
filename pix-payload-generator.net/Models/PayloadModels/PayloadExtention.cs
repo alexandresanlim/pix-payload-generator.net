@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace pix_payload_generator.net
+namespace pix_payload_generator.net.Models.PayloadModels
 {
     public static class PayloadExtention
     {
@@ -11,7 +11,7 @@ namespace pix_payload_generator.net
             return GetValue(PayloadId.PayloadFormatIndicator, "01");
         }
 
-        public static string GetMerchantAccountInformation(this PayloadBase payload)
+        public static string GetMerchantAccountInformation(this Payload payload)
         {
             var gui = GetValue(PayloadId.MerchantAccountInfomationGui, "br.gov.bcb.pix");
 
@@ -35,7 +35,7 @@ namespace pix_payload_generator.net
             return GetValue(PayloadId.TransactionCurrency, "986");
         }
 
-        public static string GetTransationAmount(this PayloadBase payload)
+        public static string GetTransationAmount(this Payload payload)
         {
             if (!payload.Amount.HasValue || !(payload.Amount.Value > 0))
                 return "";
@@ -48,17 +48,17 @@ namespace pix_payload_generator.net
             return GetValue(PayloadId.CountryCode, "BR");
         }
 
-        public static string GetMerchantName(this PayloadBase payload)
+        public static string GetMerchantName(this Payload payload)
         {
             return GetValue(PayloadId.MerchantName, payload.Merchant.Name);
         }
 
-        public static string GetMerchantCity(this PayloadBase payload)
+        public static string GetMerchantCity(this Payload payload)
         {
             return GetValue(PayloadId.MerchantCity, payload.Merchant.City);
         }
 
-        public static string GetAdditionalDataFieldTemplate(this PayloadBase payload)
+        public static string GetAdditionalDataFieldTemplate(this Payload payload)
         {
             var txidInfo = payload.TxId.Length > 25 ? payload.TxId.Substring(0, 25) : payload.TxId;
 
@@ -76,7 +76,7 @@ namespace pix_payload_generator.net
             return fullPaylod + GetValue(PayloadId.CRC16, calc);
         }
 
-        public static string GetUniquePayment(this PayloadBase payload)
+        public static string GetUniquePayment(this Payload payload)
         {
             return payload.UniquePayment ? GetValue(PayloadId.PointOfInitiationMethod, "12") : "";
         }
@@ -96,7 +96,7 @@ namespace pix_payload_generator.net
             return r;
         }
 
-        public static string GenerateStringToQrCode(this PayloadBase payload)
+        public static string GenerateStringToQrCode(this Payload payload)
         {
             var pgenerator =
                GetIndicator() +

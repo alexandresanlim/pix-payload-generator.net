@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace pix_payload_generator.net
+namespace pix_payload_generator.net.Models.PayloadModels
 {
     public abstract class PayloadId
     {

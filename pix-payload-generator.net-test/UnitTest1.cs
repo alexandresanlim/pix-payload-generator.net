@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using pix_payload_generator.net;
+using pix_payload_generator.net.Models.CobrancaModels;
+using pix_payload_generator.net.Models.PayloadModels;
 
 namespace pix_payload_generator.net_test
 {
@@ -9,10 +11,9 @@ namespace pix_payload_generator.net_test
         [TestMethod]
         public void CreateStaticPayload()
         {
-            var payload = new StaticPayload(
-                "bee05743-4291-4f3c-9259-595df1307ba1",
-                "Um-Id-Qualquer",
-                new Merchant("Alexandre Lima", "Presidente Prudente"));
+            var cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1");
+
+            var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
 
             var stringToQrCode = payload.GenerateStringToQrCode();
 
@@ -22,14 +23,16 @@ namespace pix_payload_generator.net_test
         [TestMethod]
         public void CreateStaticPayloadWithOptinalInfo()
         {
-            var payload = new StaticPayload(
-                "bee05743-4291-4f3c-9259-595df1307ba1",
-                "Um-Id-Qualquer",
-                new Merchant("Alexandre Lima", "Presidente Prudente"))
+            Cobranca cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1")
             {
-                Amount = 15.00m,
-                Description = "Pagamento do pedido X"
+                SolicitacaoPagador = "Pagamento do Pedido X",
+                Valor = new Valor
+                {
+                    Original = "50.00"
+                }
             };
+
+            var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
 
             var stringToQrCode = payload.GenerateStringToQrCode();
 
