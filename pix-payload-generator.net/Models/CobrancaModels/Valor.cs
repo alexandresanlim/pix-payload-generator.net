@@ -12,6 +12,7 @@ namespace pix_payload_generator.net.Models.CobrancaModels
         [JsonProperty("original")]
         public string Original { get; set; }
 
+        [JsonIgnore]
         public decimal ToDecimal => Convert.ToDecimal(Original, new System.Globalization.CultureInfo("en-US"));
     }
 }
