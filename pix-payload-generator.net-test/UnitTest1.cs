@@ -28,7 +28,7 @@ namespace pix_payload_generator.net_test
                 SolicitacaoPagador = "Pagamento do Pedido X",
                 Valor = new Valor
                 {
-                    Original = "50.00"
+                    Original = "15.00"
                 }
             };
 
