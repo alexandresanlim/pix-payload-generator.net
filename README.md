@@ -7,6 +7,11 @@
 
 Este pacote auxilia na geração de payloads para usar em QRCode estático PIX (Sistema de pagamento instântaneo do Brasil)
 
+# Informações importantes
+- Não requer um PSP
+- Não necessita de conexão com a internet
+- Não é possivel recuperar informações de pagamento
+
 # Como usar?
 
 ### 1 - Instale [este pacote](https://www.nuget.org/packages/pix-payload-generator.net) na sua aplicação.
