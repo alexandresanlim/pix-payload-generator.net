@@ -14,9 +14,9 @@ Este pacote auxilia na geração de payloads para usar em QRCode estático PIX (
 
 # Como usar?
 
-### 1 - Instale [este pacote](https://www.nuget.org/packages/pix-payload-generator.net) na sua aplicação.
+1 - Instale [este pacote](https://www.nuget.org/packages/pix-payload-generator.net) na sua aplicação.
 
-### 2 - Crie uma instância de Cobrança usando como parâmetros a chave pix, em seguida converta para um Payload passando como parâmetro o id de identificação da transação e informações do títular da conta.
+2 - Crie uma instância de Cobrança usando como parâmetros a chave pix, em seguida converta para um Payload passando como parâmetro o id de identificação da transação e informações do títular da conta.
 
 ```csharp
 var cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1");
@@ -39,12 +39,12 @@ Cobranca cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1")
 
 ```
 
-### 3 - Gerar o Payload a partir da cobrança criada
+3 - Gerar o Payload a partir da cobrança criada
 ```csharp
 var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
 ```
 
-### 4 - Pegar uma string para setar em um QrCode a aprtir do Payload gerado
+4 - Pegar uma string para setar em um QrCode a aprtir do Payload gerado
 
 ```csharp
 var stringToQrCode = payload.GenerateStringToQrCode();
@@ -56,7 +56,7 @@ Retornará uma string como esta:
 00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre Lima6019Presidente Prudente62180514Um-Id-Qualquer6304D475
 ```
 
-### 4 - Por fim, basta setar em um QRCode! ;)
+5 - Por fim, basta setar em um QRCode! ;)
 
 <img src='https://dyn-qrcode.vercel.app/api?url=00020126580014br.gov.bcb.pix0136bee05743-4291-4f3c-9259-595df1307ba1520400005303986540510.005802BR5914Alexandre%20Lima6019Presidente%20Prudente62180514Um-Id-Qualquer6304D475' />
 
