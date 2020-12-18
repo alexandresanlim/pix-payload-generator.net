@@ -1,4 +1,4 @@
-# PixPayloadGenerator.Net
+# Pix - Payload Generator .net
 
 <img width='200' src='https://user-images.githubusercontent.com/5353685/101644586-233eb080-3a14-11eb-9cec-2172586abfde.png'/>
 
