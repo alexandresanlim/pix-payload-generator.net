@@ -20,28 +20,31 @@ Este pacote auxilia na geração de payloads para usar em QRCode estático PIX (
 
 ```csharp
 var cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1");
-var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
 ```
 
-#### Propriedades opcionais:
+#### Você pode optar por adicionar mais algumas informações (não obrigatório):
 - Valor (Caso não informado, ficará livre para o pagador digitar o valor);
 - Descriçao (Caso informado, aparecerá no momento do pagamento).
 
 Exemplo, definindo o valor de R$ 15,00 e descrição "Pagamento do pedido X":
 ```csharp
 Cobranca cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1")
-            {
-                SolicitacaoPagador = "Pagamento do Pedido X",
-                Valor = new Valor
-                {
-                    Original = "15.00"
-                }
-            };
+{
+    SolicitacaoPagador = "Pagamento do Pedido X",
+    Valor = new Valor
+    {
+        Original = "15.00"
+    }
+};
 
+```
+
+### 3 - Gerar o Payload a partir da cobrança criada
+```csharp
 var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
 ```
 
-### 3 - A partir do Payload gerado crie uma string para setar no QrCode:
+### 4 - Pegar uma string para setar em um QrCode a aprtir do Payload gerado
 
 ```csharp
 var stringToQrCode = payload.GenerateStringToQrCode();
