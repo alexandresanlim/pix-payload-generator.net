@@ -10,7 +10,7 @@ Este pacote auxilia na geração de payloads para usar em QRCode estático PIX (
 # ⚠ Informações importantes
 - Não requer um PSP
 - Não necessita de conexão com a internet
-- Não é possivel recuperar informações de status de pagamento
+- Não é possivel recuperar informações do status de pagamento
 
 # Como usar?
 
