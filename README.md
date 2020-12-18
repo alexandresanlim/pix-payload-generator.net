@@ -15,6 +15,9 @@ Este pacote auxilia na geração de payloads para usar em QRCode estático PIX (
 # Como usar?
 
 1 - Instale [este pacote](https://www.nuget.org/packages/pix-payload-generator.net) na sua aplicação.
+```
+Install-Package pix-payload-generator.net
+```
 
 2 - Crie uma instância de Cobrança usando como parâmetros a chave pix, em seguida converta para um Payload passando como parâmetro o id de identificação da transação e informações do títular da conta.
 
