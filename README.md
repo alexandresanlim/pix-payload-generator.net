@@ -69,5 +69,4 @@ Retornará uma string como esta:
 
 # Extra
 - Caso necessite das funções de QrCode dinâmico, onde é possível acompanhar o status de pagamento e conectar com as funções disponíveis na [pix-api](https://bacen.github.io/pix-api/) use [este pacote](https://github.com/alexandresanlim/pix-dynamic-payload-generator.net).
-
 - [Conheça o PIX OFF](https://github.com/alexandresanlim/PixQrCodeGeneratorOffline) - O aplicativo que usa as funcionalidades presentes neste pacote
