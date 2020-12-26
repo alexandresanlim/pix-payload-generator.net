@@ -20,7 +20,7 @@ Este pacote auxilia na geração de payloads para usar em QRCode estático PIX (
 Install-Package pix-payload-generator.net
 ```
 
-2 - Crie uma instância de Cobrança usando como parâmetros a chave pix.
+2 - Crie uma instância de Cobrança passando por parâmetro a chave pix.
 
 ```csharp
 var cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1");
