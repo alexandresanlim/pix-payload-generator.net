@@ -26,8 +26,8 @@ Install-Package pix-payload-generator.net
 var cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1");
 ```
 
-#### Você pode optar por adicionar mais algumas informações (não obrigatório):
-- Valor (Caso não informado, ficará livre para o pagador digitar o valor);
+#### Você pode optar por adicionar mais algumas informações:
+- Valor (Caso não informado, ficará livre para o pagador digitar);
 - Descriçao (Caso informado, aparecerá no momento do pagamento).
 
 Exemplo, definindo o valor de R$ 15,00 e descrição "Pagamento do pedido X":
@@ -50,6 +50,7 @@ var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim"
 
 4 - Pegar uma string para setar em um QrCode a aprtir do Payload gerado
 
+
 ```csharp
 var stringToQrCode = payload.GenerateStringToQrCode();
 ```
@@ -70,4 +71,4 @@ Retornará uma string como esta:
 
 # Extra
 - Caso necessite das funções de QrCode dinâmico, onde é possível acompanhar o status de pagamento e conectar com as funções disponíveis na [pix-api](https://bacen.github.io/pix-api/) use [este pacote](https://github.com/alexandresanlim/pix-dynamic-payload-generator.net).
-- [Conheça o PIX OFF](https://github.com/alexandresanlim/PixQrCodeGeneratorOffline) - O aplicativo que usa as funcionalidades presentes neste pacote
+- [Conheça o PIX OFF](https://github.com/alexandresanlim/PixQrCodeGeneratorOffline) - O aplicativo que usa as funcionalidades presentes aqui.
