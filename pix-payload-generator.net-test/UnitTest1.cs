@@ -25,7 +25,7 @@ namespace pix_payload_generator.net_test
         {
             Cobranca cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1")
             {
-                SolicitacaoPagador = "Pagamento do Pedido X",
+                SolicitacaoPagador = "Informar cartão fidelidade",
                 Valor = new Valor
                 {
                     Original = "15.00"

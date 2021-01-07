@@ -14,5 +14,8 @@ namespace pix_payload_generator.net.Models.CobrancaModels
 
         [JsonIgnore]
         public decimal ToDecimal => Convert.ToDecimal(Original, new System.Globalization.CultureInfo("en-US"));
+
+        [JsonIgnore]
+        public string Display => ToDecimal.ToString("C");
     }
 }
