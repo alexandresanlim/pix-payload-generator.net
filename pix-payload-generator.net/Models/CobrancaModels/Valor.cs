@@ -13,7 +13,7 @@ namespace pix_payload_generator.net.Models.CobrancaModels
         public string Original { get; set; }
 
         [JsonIgnore]
-        public decimal ToDecimal => Convert.ToDecimal(Original, new System.Globalization.CultureInfo("en-US"));
+        public decimal ToDecimal => decimal.Parse(Original);
 
         [JsonIgnore]
         public string Display => ToDecimal.ToString("C");
