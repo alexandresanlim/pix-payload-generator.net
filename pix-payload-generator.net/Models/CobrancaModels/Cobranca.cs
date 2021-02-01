@@ -50,7 +50,7 @@ namespace pix_payload_generator.net.Models.CobrancaModels
     {
         public static Payload ToPayload(this Cobranca cobranca, string txId, Merchant merchant)
         {
-            return new StaticPayload(cobranca.Chave, txId, merchant, cobranca?.Valor?.ToDecimal, cobranca?.SolicitacaoPagador);
+            return new StaticPayload(cobranca.Chave, txId, merchant, cobranca?.Valor?.Original, cobranca?.SolicitacaoPagador);
         }
     }
 

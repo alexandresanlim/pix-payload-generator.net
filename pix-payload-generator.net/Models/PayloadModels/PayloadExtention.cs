@@ -37,10 +37,10 @@ namespace pix_payload_generator.net.Models.PayloadModels
 
         public static string GetTransationAmount(this Payload payload)
         {
-            if (!payload.Amount.HasValue || !(payload.Amount.Value > 0))
+            if (string.IsNullOrEmpty(payload?.Amount))
                 return "";
 
-            return GetValue(PayloadId.TransactionAmount, payload.Amount.Value.ToString("G", System.Globalization.CultureInfo.InvariantCulture));
+            return GetValue(PayloadId.TransactionAmount, payload.Amount);
         }
 
         public static string GetCountryCode()

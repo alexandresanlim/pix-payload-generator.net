@@ -29,7 +29,7 @@ namespace pix_payload_generator.net.Models.PayloadModels
         /// <summary>
         /// Valor da transação, duas casas decimais, separadas por ponto e não tenha separação de milhar
         /// </summary>
-        public decimal? Amount { get; set; }
+        public string Amount { get; set; }
 
         /// <summary>
         /// Url do payload dinâmico
@@ -52,7 +52,7 @@ namespace pix_payload_generator.net.Models.PayloadModels
         /// <param name="_txId">Identificado do pagamento</param>
         /// <param name="_merchant">Informações do titular da conta</param>
         /// <param name="_description">Uma descrição que aparecerá no momento do pagamento</param>
-        public StaticPayload(string _pixKey, string _txId, Merchant _merchant, decimal? _amount = null, string _description = "")
+        public StaticPayload(string _pixKey, string _txId, Merchant _merchant, string _amount = null, string _description = "")
         {
             PixKey = _pixKey;
             Description = _description;
@@ -73,7 +73,7 @@ namespace pix_payload_generator.net.Models.PayloadModels
         /// <param name="_uniquePayment">Definir se é pagamento unico</param>
         /// <param name="_amount"></param>
         /// <param name="_description"></param>
-        public DynamicPayload(string _txId, Merchant _merchant, string _url, bool _uniquePayment = false, decimal? _amount = null, string _description = "")
+        public DynamicPayload(string _txId, Merchant _merchant, string _url, bool _uniquePayment = false, string _amount = null, string _description = "")
         {
             Description = _description;
             Merchant = _merchant;

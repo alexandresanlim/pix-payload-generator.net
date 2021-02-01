@@ -28,7 +28,7 @@ namespace pix_payload_generator.net_test
                 SolicitacaoPagador = "Informar cartão fidelidade",
                 Valor = new Valor
                 {
-                    Original = "2.555.55"
+                    Original = "1.00"
                 }
             };
 
