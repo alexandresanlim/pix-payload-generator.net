@@ -43,6 +43,15 @@ Cobranca cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1")
 
 ```
 
+#### ATENÇÃO! Os valores de "Original" devem sempre seguir o padrão de duas casas decimais, ex:
+
+R$ 10.000,00 = "10000.00"<br/>
+R$ 1.000,00 = "1000.00"<br/>
+R$ 100,00 = "100.00"<br/>
+R$ 10,00 = "10.00"<br/>
+R$ 1,00 = "1.00"<br/>
+R$ 0,90 = "0.90"
+
 3 - Gerar o Payload a partir da cobrança criada
 ```csharp
 var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
