@@ -43,7 +43,7 @@ Cobranca cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1")
 
 ```
 
-#### ATENÇÃO! Os valores de "Original" devem sempre seguir o padrão de duas casas decimais, ex:
+#### ATENÇÃO! Os valores de "Original" devem sempre seguir o padrão de duas casas decimais separadas por ".", ex:
 
 R$ 10.000,00 = "10000.00"<br/>
 R$ 1.000,00 = "1000.00"<br/>
