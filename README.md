@@ -5,7 +5,7 @@
 [![Nuget](https://img.shields.io/nuget/dt/pix-payload-generator.net)](https://www.nuget.org/packages/pix-payload-generator.net)
 [![Nuget](https://img.shields.io/nuget/v/pix-payload-generator.net)](https://www.nuget.org/packages/pix-payload-generator.net)
 
-Este pacote auxilia na geração de payloads para usar em QRCode estático PIX (Sistema de pagamento instântaneo do Brasil)
+Este pacote auxilia na geração de payloads para usar em QRCode estático PIX.
 
 # ⚠ Informações importantes
 - Não requer um PSP
