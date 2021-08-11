@@ -52,6 +52,8 @@ R$ 10,00 = "10.00"<br/>
 R$ 1,00 = "1.00"<br/>
 R$ 0,90 = "0.90"
 
+#### Os bancos tem limites de valores a ser transferido por Pix, verifique o limite para o seu antes de transferir um valor.
+
 3 - Gerar o Payload a partir da cobrança criada
 ```csharp
 var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
