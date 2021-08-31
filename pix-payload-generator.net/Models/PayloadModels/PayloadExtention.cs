@@ -13,7 +13,7 @@ namespace pix_payload_generator.net.Models.PayloadModels
 
         public static string GetMerchantAccountInformation(this Payload payload)
         {
-            var gui = GetValue(PayloadId.MerchantAccountInfomationGui, "br.gov.bcb.pix");
+            var gui = GetValue(PayloadId.MerchantAccountInfomationGui, "BR.GOV.BCB.PIX");
 
             var key = !string.IsNullOrEmpty(payload?.PixKey) ? GetValue(PayloadId.MerchantAccountInfomationKey, payload.PixKey) : "";
 
