@@ -12,6 +12,7 @@ Este pacote auxilia na geração de payloads para usar em QRCode estático PIX.
 - Não necessita de conexão com a internet
 - Não é possivel recuperar informações do status de pagamento, use [este pacote](https://github.com/alexandresanlim/pix-dynamic-payload-generator.net) caso necessite disso.
 - Não é possivel pagar para si mesmo usando a mesma Chave x PSP, ex: gerar um QrCode para uma chave na Nubank e tentar pagar com a própria conta da Nubank.
+- O QrCode/Código copia e cola gerado, pode ser reaproveitado para vários pagamentos.
 
 # Como usar?
 
