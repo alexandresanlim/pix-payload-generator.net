@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
+using pix_payload_generator.net.Models.Attributes;
+using pix_payload_generator.net.Models.Attributes.Pix;
+using pix_payload_generator.net.Models.Constants;
 using pix_payload_generator.net.Models.PayloadModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace pix_payload_generator.net.Models.CobrancaModels
 {
@@ -18,9 +17,9 @@ namespace pix_payload_generator.net.Models.CobrancaModels
         /// <summary>
         /// O campo chave, obrigatório, determina a chave Pix registrada no DICT que será utilizada para a cobrança. Essa chave será lida pelo aplicativo do PSP do pagador para consulta ao DICT, que retornará a informação que identificará o recebedor da cobrança.
         /// Os tipos de chave podem ser: telefone, e-mail, cpf/cnpj ou EVP.
-        /// O formato das chaves pode ser encontrado na seção "Formatação das chaves do DICT no BR Code" do Manual de Padrões para iniciação do Pix.
+        /// O formato das chaves pode ser encontrado na seção "Formatação das chaves do DICT no BR Code" do Manual de Padrões para iniciação do Pix: https://www.bcb.gov.br/estabilidadefinanceira/pix.
         /// /// </summary>
-        [JsonProperty("chave")]
+        [JsonProperty("chave"), MaxLenght(77, FailureMessage = Const.MAX_LENGHT_TITLE + "77")]
         public string Chave { get; set; }
 
         /// <summary>
@@ -28,7 +27,7 @@ namespace pix_payload_generator.net.Models.CobrancaModels
         /// Esse texto será preenchido, na pacs.008, pelo PSP do pagador, no campo RemittanceInformation . 
         /// O tamanho do campo na pacs.008 está limitado a 140 caracteres.
         /// </summary>
-        [JsonProperty("solicitacaoPagador")]
+        [JsonProperty("solicitacaoPagador"), MaxLenght(140, FailureMessage = Const.MAX_LENGHT_TITLE + "140")]
         public string SolicitacaoPagador { get; set; }
 
         /// <summary>
@@ -42,7 +41,7 @@ namespace pix_payload_generator.net.Models.CobrancaModels
         /// <summary>
         /// valores monetários referentes à cobrança.
         /// </summary>
-        [JsonProperty("valor")]
+        [JsonProperty("valor"), PixValorAttribute]
         public Valor Valor { get; set; }
     }
 
@@ -53,5 +52,4 @@ namespace pix_payload_generator.net.Models.CobrancaModels
             return new StaticPayload(cobranca.Chave, txId, merchant, cobranca?.Valor?.Original, cobranca?.SolicitacaoPagador);
         }
     }
-
 }
