@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using pix_payload_generator.net;
+using pix_payload_generator.net.Models.Attributes;
 using pix_payload_generator.net.Models.CobrancaModels;
+using pix_payload_generator.net.Models.Constants;
 using pix_payload_generator.net.Models.PayloadModels;
 
 namespace pix_payload_generator.net_test
@@ -17,6 +18,13 @@ namespace pix_payload_generator.net_test
 
             var stringToQrCode = payload.GenerateStringToQrCode();
 
+            var isValidBoolean = cobranca.IsValid();
+            var isValidString = cobranca.IsValidString();
+
+            isValidString.TryGetValue(Const.IS_VALID_KEY, out string isValidStringResult);
+
+            Assert.IsTrue(isValidBoolean);
+            Assert.AreEqual(bool.TrueString, isValidStringResult);
             Assert.IsFalse(string.IsNullOrEmpty(stringToQrCode));
         }
 
@@ -36,7 +44,14 @@ namespace pix_payload_generator.net_test
 
             var stringToQrCode = payload.GenerateStringToQrCode();
 
-            Assert.IsFalse(string.IsNullOrEmpty(stringToQrCode));
+            var isValidBoolean = cobranca.IsValid();
+            var isValidString = cobranca.IsValidString();
+
+            isValidString.TryGetValue(Const.IS_VALID_KEY, out string isValidStringResult);
+
+            Assert.IsTrue(isValidBoolean);
+            Assert.AreEqual(bool.TrueString, isValidStringResult);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(stringToQrCode));
         }
     }
 }

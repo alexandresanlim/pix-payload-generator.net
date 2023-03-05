@@ -1,18 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard1.0;netstandard1.6;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net45;netstandard2.0;netstandard2.1;net5.0;net6.0</TargetFrameworks>
     <RootNamespace>pix_payload_generator.net</RootNamespace>
     <Authors>Alexandre Sanlim</Authors>
     <RepositoryUrl>https://github.com/alexandresanlim/pix-payload-generator.net</RepositoryUrl>
     <PackageProjectUrl>https://github.com/alexandresanlim/pix-payload-generator.net</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>1.0.18</Version>
+    <Version>1.0.19-pre-release</Version>
     <Description>Gerar payload para qrcode PIX, sistema de pagamento do banco central do brasil</Description>
     <PackageTags>brasil, brazil, pagamento, payload, qr, code, banco, central</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Adicionado validações e suporte a .net5 e .net6</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="src\logo.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
