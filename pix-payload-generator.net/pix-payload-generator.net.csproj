@@ -7,11 +7,11 @@
     <RepositoryUrl>https://github.com/alexandresanlim/pix-payload-generator.net</RepositoryUrl>
     <PackageProjectUrl>https://github.com/alexandresanlim/pix-payload-generator.net</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
-    <Version>1.0.20</Version>
+    <Version>1.0.21</Version>
     <Description>Gerar payload para qrcode PIX, sistema de pagamento do banco central do brasil</Description>
     <PackageTags>brasil, brazil, pagamento, payload, qr, code, banco, central</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Adicionado validações e suporte a .net5 e .net6</PackageReleaseNotes>
+    <PackageReleaseNotes>Adicionado suporte para geração de payload dinâmico</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

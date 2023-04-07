@@ -2,7 +2,6 @@
 using pix_payload_generator.net.Models.Attributes;
 using pix_payload_generator.net.Models.Attributes.Pix;
 using pix_payload_generator.net.Models.Constants;
-using pix_payload_generator.net.Models.PayloadModels;
 using System.Collections.Generic;
 
 namespace pix_payload_generator.net.Models.CobrancaModels
@@ -41,15 +40,7 @@ namespace pix_payload_generator.net.Models.CobrancaModels
         /// <summary>
         /// valores monetários referentes à cobrança.
         /// </summary>
-        [JsonProperty("valor"), PixValorAttribute]
+        [JsonProperty("valor"), PixValor]
         public Valor Valor { get; set; }
-    }
-
-    public static class CobrancaExtention
-    {
-        public static Payload ToPayload(this Cobranca cobranca, string txId, Merchant merchant)
-        {
-            return new StaticPayload(cobranca.Chave, txId, merchant, cobranca?.Valor?.Original, cobranca?.SolicitacaoPagador);
-        }
     }
 }

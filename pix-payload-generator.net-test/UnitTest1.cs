@@ -29,6 +29,25 @@ namespace pix_payload_generator.net_test
         }
 
         [TestMethod]
+        public void CreateDynamicPayload()
+        {
+            var cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1");
+
+            var payload = cobranca.ToDynamicPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"), "qrcodes-pix.gerencianet.com.br/v2/b0e555d114fc48b9b37c1f6baa360adb");
+
+            var stringToQrCode = payload.GenerateStringToQrCode();
+
+            var isValidBoolean = cobranca.IsValid();
+            var isValidString = cobranca.IsValidString();
+
+            isValidString.TryGetValue(Const.IS_VALID_KEY, out string isValidStringResult);
+
+            Assert.IsTrue(isValidBoolean);
+            Assert.AreEqual(bool.TrueString, isValidStringResult);
+            Assert.IsFalse(string.IsNullOrEmpty(stringToQrCode));
+        }
+
+        [TestMethod]
         public void CreateStaticPayloadWithOptinalInfo()
         {
             Cobranca cobranca = new Cobranca(_chave: "bee05743-4291-4f3c-9259-595df1307ba1")

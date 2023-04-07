@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace pix_payload_generator.net.Models.PayloadModels
+﻿namespace pix_payload_generator.net.Models.PayloadModels
 {
     public class Payload
     {

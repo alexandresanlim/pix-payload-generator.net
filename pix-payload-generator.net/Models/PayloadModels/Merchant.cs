@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace pix_payload_generator.net.Models.PayloadModels
+﻿namespace pix_payload_generator.net.Models.PayloadModels
 {
     public class Merchant
     {
         public Merchant(string _name, string _city)
         {
             Name = _name;
-            City = _city;
+
+            //Pode ter no maximo o tamanho de 15.
+            City = _city.Length >= 15 ? _city.Substring(0, 15) : _city;
         }
 
         /// <summary>
