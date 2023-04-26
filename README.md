@@ -60,7 +60,7 @@ R$ 0,90 = "0.90"
 var payload = cobranca.ToPayload("O-TxtId-Aqui", new Merchant("Alexandre Sanlim", "Presidente Prudente"));
 ```
 
-4 - Pegar uma string para setar em um QrCode a aprtir do Payload gerado
+4 - Pegar uma string para setar em um QrCode a partir do Payload gerado
 
 
 ```csharp
